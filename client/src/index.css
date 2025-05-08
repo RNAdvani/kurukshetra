@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotateX(10deg);
+  }
+  50% {
+    transform: translateY(-10px) rotateX(-5deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes particle {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(10px, -10px) scale(1.5);
+    opacity: 1;
+  }
+}
+
+@layer utilities {
+  .perspective {
+    perspective: 1000px;
+  }
+
+  .rotate-y-12 {
+    transform: rotateY(12deg);
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-particle-1 {
+    animation: particle 4s ease-in-out infinite;
+  }
+
+  .animate-particle-2 {
+    animation: particle 4s ease-in-out infinite 1s;
+  }
+
+  .animate-particle-3 {
+    animation: particle 4s ease-in-out infinite 2s;
+  }
+}
+
+@layer base {
+  .transform-gpu {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

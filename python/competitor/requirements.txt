@@ -1,0 +1,5 @@
+torch==2.4.0+cu118
+xformers==0.0.26
+datasets
+transformers
+unsloth
